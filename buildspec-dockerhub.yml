@@ -1,7 +1,7 @@
 version: 0.2
 
 env:
-  parameter-store:
+  variables:
     DOCKER_HUB_USERNAME: "docker_hub_username"
     DOCKER_HUB_PASSWORD: "docker_hub_password"
     # store with: aws ssm put-parameter --name "docker_hub_username" --value "<username value>" --type String
