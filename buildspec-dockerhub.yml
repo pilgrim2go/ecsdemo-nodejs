@@ -1,14 +1,15 @@
 version: 0.2
 
 env:
-  variables:
+  parameter-store:
     DOCKER_HUB_USERNAME: "docker_hub_username"
     DOCKER_HUB_PASSWORD: "docker_hub_password"
     # store with: aws ssm put-parameter --name "docker_hub_username" --value "<username value>" --type String
 phases:
   install:
     commands:
-      - export IMAGE_TAG=$(echo $CODEBUILD_SOURCE_VERSION | cut -c 1-7)
+#      - export IMAGE_TAG=$(echo $CODEBUILD_SOURCE_VERSION | cut -c 1-7)
+      - export IMAGE_TAG=latest
       - export ACCOUNT=$(echo $CODEBUILD_BUILD_ARN |cut -f5 -d:)
       - export PROJECT_NAME=$(basename $PWD)
       - export CODEBUILD_GIT_BRANCH="$(git symbolic-ref HEAD --short 2>/dev/null)"
