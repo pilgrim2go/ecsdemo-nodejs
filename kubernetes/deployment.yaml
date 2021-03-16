@@ -21,7 +21,7 @@ spec:
         app: ecsdemo-nodejs
     spec:
       containers:
-      - image: pilgrim2go/ecsdemo-nodejs:202103120358PM
+      - image: pilgrim2go/ecsdemo-nodejs:202103160305PM
         imagePullPolicy: Always
         name: ecsdemo-nodejs
         ports:
